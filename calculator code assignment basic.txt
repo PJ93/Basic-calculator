@@ -16,7 +16,7 @@ namespace Calculator_PJ
 
             /*atm it can't handel a unicode being entered instead of a number
              * fixed for the exitchoice loop
-             * 
+             * fixed the user being able to input something else during the equation selection step
              * 
              * 
              * /
@@ -36,6 +36,7 @@ namespace Calculator_PJ
 
             //int exitChoice;
 
+            
 
             bool keepalive = true;
             while (keepalive)
@@ -43,16 +44,10 @@ namespace Calculator_PJ
 
                 Console.WriteLine("Enter a number and press Enter");
 
-                int num1 = Convert.ToInt32(Console.ReadLine());
-
-
-
-                //Console.WriteLine("Enter another number");
-
-                //int num2 = Convert.ToInt32(Console.ReadLine());
+                int num1 = Convert.ToInt32(Console.ReadLine()); //enter anything that isn't a number causes the calculator to crash
 
                 bool equationcheck = true;
-                while(equationcheck)
+                while (equationcheck)
                 {
                     Console.WriteLine("Choose what kind of equation you wanna do [Only use symbols]:");
                     //Console.WriteLine("+  -  *  /");

@@ -8,16 +8,47 @@ namespace Calculator_PJ
 {
     class Program
     {
+
+        static double Addition (double num1, double num2)
+        {
+            double result = num1 + num2;
+
+            return result;
+        }
+
+        static double subtration(double num1, double num2)
+        {
+            double result = num1 - num2;
+
+            return result;
+        }
+
+        static double multi(double num1, double num2)
+        {
+            double result = num1 * num2;
+
+            return result;
+        }
+
+        static double division(double num1, double num2)
+        {
+            double result = num1 / num2;
+
+            return result;
+        }
+
+
         static void Main(string[] args)
         {
             //calculator assignment by PJ
             //oct 10th
-            //updated Oct 11th
+            //updated Oct 14th
 
             /*atm it can't handel a unicode being entered instead of a number
              * fixed for the exitchoice loop
              * fixed the user being able to input something else during the equation selection step
-             * 
+             * put all the equations in methods
+             * changed ints to double allowing for decimal numbers
              * 
              * /
 
@@ -36,7 +67,7 @@ namespace Calculator_PJ
 
             //int exitChoice;
 
-            
+
 
             bool keepalive = true;
             while (keepalive)
@@ -44,7 +75,7 @@ namespace Calculator_PJ
 
                 Console.WriteLine("Enter a number and press Enter");
 
-                int num1 = Convert.ToInt32(Console.ReadLine()); //enter anything that isn't a number causes the calculator to crash
+                double num1 = Convert.ToDouble(Console.ReadLine()); //enter anything that isn't a number causes the calculator to crash
 
                 bool equationcheck = true;
                 while (equationcheck)
@@ -96,16 +127,16 @@ namespace Calculator_PJ
 
                 Console.WriteLine("Enter another number and press Enter");
 
-                int num2 = Convert.ToInt32(Console.ReadLine());
+                double num2 = Convert.ToDouble(Console.ReadLine());
 
 
                 switch (equationChoice)
                 {
                     case "+":
 
-                        int result = num1 + num2;
+                        //int result = num1 + num2;
 
-                        Console.WriteLine("Result: " + num1.ToString() + "+" + num2.ToString() + " = " + result);
+                        Console.WriteLine("Result: " + num1.ToString() + "+" + num2.ToString() + " = " + Addition(num1,num2));
                         //^ improvement over the code below
                         //Console.WriteLine(num1 + num2);
 
@@ -113,8 +144,8 @@ namespace Calculator_PJ
                         break;
 
                     case "-":
-                        int resultM = num1 - num2;
-                        Console.WriteLine("Result: " + num1.ToString() + "-" + num2.ToString() + " = " + resultM);
+                        //int resultM = num1 - num2;
+                        Console.WriteLine("Result: " + num1.ToString() + "-" + num2.ToString() + " = " + subtration(num1,num2));
                         //^ improvement over the code below
                         //Console.WriteLine(num1 - num2);
 
@@ -122,8 +153,8 @@ namespace Calculator_PJ
                         break;
 
                     case "*":
-                        int resultT = num1 * num2;
-                        Console.WriteLine("Result: " + num1.ToString() + "*" + num2.ToString() + " = " + resultT);
+                        //int resultT = num1 * num2;
+                        Console.WriteLine("Result: " + num1.ToString() + "*" + num2.ToString() + " = " + multi(num1,num2));
                         //^ improvement over the code below
                         //Console.WriteLine(num1 * num2);
 
@@ -131,8 +162,8 @@ namespace Calculator_PJ
                         break;
 
                     case "/":
-                        int resultD = num1 / num2;
-                        Console.WriteLine("Result: " + num1.ToString() + "/" + num2.ToString() + " = " + resultD);
+                        //int resultD = num1 / num2;
+                        Console.WriteLine("Result: " + num1.ToString() + "/" + num2.ToString() + " = " + division(num1,num2));
                         //^ improvement over the code below
                         //Console.WriteLine(num1 / num2);
 
@@ -195,7 +226,6 @@ namespace Calculator_PJ
                 //Console.ReadKey();
 
             }//while keepalive
-
-        }//static void Main
-    }//class program
+    }//static void Main
+}//class program
 }//namespace
